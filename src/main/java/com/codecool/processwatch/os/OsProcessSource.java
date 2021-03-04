@@ -36,12 +36,11 @@ public class OsProcessSource implements ProcessSource {
                 new String[]{Arrays.toString(p.info().arguments().orElse(new String[]{}))}
         ));
     }
-// kill proces by iulia
+
     @Override
     public void killProcess(long processId) {
         ProcessHandle
             .of(processId)
             .ifPresent(s -> s.destroy());
-
     }
 }
